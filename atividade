@@ -1,0 +1,108 @@
+// Função de boas-vindas
+function boasVindas(nome) {
+  console.log(`Olá, ${nome}! Seja bem-vindo(a) à página.`);
+}
+
+// Função par ou ímpar
+function parImpar(numero) {
+  return numero % 2 === 0;
+}
+
+// Função de média aritmética
+function mediaAritmetica(numeros) {
+  const soma = numeros.reduce((acc, num) => acc + num, 0);
+  return soma / numeros.length;
+}
+
+// Função para caixa alta
+function caixaAlta(texto) {
+  return texto.toUpperCase();
+}
+
+// Função para verificar número primo
+function ehPrimo(numero) {
+  if (numero <= 1) return false;
+  for (let i = 2; i < Math.sqrt(numero); i++) {
+    if (numero % i === 0) return false;
+  }
+  return true;
+}
+
+// Função para inverter ordem do array
+function inverterArray(array) {
+  return array.reverse();
+}
+
+// Função para aumentar valor com porcentagem
+function aumentarValor(valor, porcentagem) {
+  const aumento = valor * (porcentagem / 100);
+  return valor + aumento;
+}
+
+// Função para verificar palíndromo
+function ehPalindromo(palavra) {
+  const palavraInvertida = palavra.split("").reverse().join("");
+  return palavra === palavraInvertida;
+}
+
+// Função para converter para binário
+function converterParaBinario(numero) {
+  let binario = "";
+  while (numero > 0) {
+    binario = numero % 2 + binario;
+    numero = Math.floor(numero / 2);
+  }
+  return binario;
+}
+
+// Função para calcular fatorial
+function calcularFatorial(numero) {
+  let fatorial = 1;
+  for (let i = 1; i <= numero; i++) {
+    fatorial *= i;
+  }
+  return fatorial;
+}
+
+// Exemplos de uso das funções
+boasVindas("João");
+
+console.log(parImpar(10)); // true
+console.log(parImpar(7)); // false
+
+const conjunto1 = [1, 2, 3, 4, 5];
+const conjunto2 = [10, 20, 30, 40, 50];
+
+console.log(mediaAritmetica(conjunto1)); // 3
+console.log(mediaAritmetica(conjunto2)); // 30
+
+const frase = "Olá, mundo!";
+const nome = "joão silva";
+
+console.log(caixaAlta(frase)); // OLÁ, MUNDO!
+console.log(caixaAlta(nome)); // JOÃO SILVA
+
+console.log(ehPrimo(13)); // true
+console.log(ehPrimo(15)); // false
+
+const numeros = [1, 2, 3, 4, 5];
+const letras = ["a", "b", "c", "d", "e"];
+
+console.log(inverterArray(numeros)); // [5, 4, 3, 2, 1]
+console.log(inverterArray(letras)); // ["e", "d", "c", "b", "a"]
+
+const preco = 100;
+const desconto = 10;
+
+console.log(aumentarValor(preco, desconto)); // 110
+
+const palavra1 = "ovo";
+const palavra2 = "arara";
+
+console.log(ehPalindromo(palavra1)); // true
+console.log(ehPalindromo(palavra2)); // true
+
+console.log(converterParaBinario(10)); // 1010
+console.log(converterParaBinario(15)); // 1111
+
+console.log(calcularFatorial(5)); // 120
